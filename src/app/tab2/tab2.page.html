@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Aggiungi Post
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (submit)="createFeeds()">
+    <ion-input placeholder="Message" name="message" [(ngModel)]="message"></ion-input>
+    <ion-input
+      type="url"
+      placeholder="Immagine url"
+      name="imageUrl"
+      [(ngModel)]="imageUrl"></ion-input>
+    <ion-button color="medium" type="submit">Aggiungi</ion-button>
+  </form>
+</ion-content>

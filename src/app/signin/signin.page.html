@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Accedi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="sign-container">
+  <form (submit)="signIn()">
+    <ion-input placeholder="Nickname" name="nickname" [(ngModel)]="nickname"></ion-input>
+    <ion-input
+      type="password"
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="password"
+    ></ion-input>
+    <ion-button color="medium" type="submit">Accedi</ion-button>
+  </form>
+
+  <div class="sign-bottom-container">
+    <h2>Non hai un account?</h2>
+    <ion-button color="medium" (click)="router.navigate(['signup'])">
+      Registrati
+    </ion-button>
+  </div>
+</ion-content>

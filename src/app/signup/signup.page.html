@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrati</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="sign-container">
+  <form (submit)="signUp()">
+    <ion-input placeholder="Nickname" name="nickname" [(ngModel)]="nickname"></ion-input>
+    <ion-input
+      type="password"
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="password"></ion-input>
+    <ion-button color="medium" type="submit">Registrati</ion-button>
+  </form>
+
+  <div class="sign-bottom-container">
+    <h2>Hai già un account?</h2>
+    <ion-button color="medium" (click)="router.navigate(['signin'])">
+      Accedi
+    </ion-button>
+  </div>
+</ion-content>
