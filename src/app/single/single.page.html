@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>{{title}}</h2>
+
+    <div class="chats" *ngFor="let chat of message">
+      <strong>{{ chat.message }}</strong>
+    </div> 
+</ion-content>

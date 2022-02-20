@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class SignupPage {
   nickname: string = '';
+  phone: string = '';
   password: string = '';
 
   constructor(
@@ -30,7 +31,7 @@ export class SignupPage {
   }
 
   signUp = () =>
-    this.apiService.signUp(this.nickname, this.password).subscribe(
+    this.apiService.signUp(this.nickname, this.phone, this.password).subscribe(
         (response) => this.presentToast('Utente verificato!', 'ok'),
 
         ({ status }: { status: number }) =>

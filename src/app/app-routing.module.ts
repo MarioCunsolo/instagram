@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'direct',
     loadChildren: () => import('./direct/direct.module').then( m => m.DirectPageModule)
+  },
+  {
+    path: 'single',
+    loadChildren: () => import('./single/single.module').then( m => m.SinglePageModule)
   }
 ];
 @NgModule({

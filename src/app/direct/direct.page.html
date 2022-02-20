@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>direct</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Chats</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content>
-
-</ion-content>
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-list-header>Conversations</ion-list-header>
+      <ion-button color="success" (click)="">Aggiungi Post</ion-button>
+      <div class="chats" *ngFor="let chat of chats">
+        <ion-item>
+          <ion-label><strong>{{ chat.title }}</strong></ion-label>
+          <ion-avatar slot="start">
+            <img [src]="chat.imageUrl" alt="post-image" class="img-post" />
+          </ion-avatar>
+          <ion-button color="success" [routerLink]="['/single', chat.id]">Accedi</ion-button>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-app>

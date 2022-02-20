@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'app-direct',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectPage implements OnInit {
 
-  constructor() { }
+  chats: any;
+  title: string = '';
+  imageUrl: string = '';
 
-  ngOnInit() {
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit(): void {
+    this.apiService.getChats().subscribe(
+      (response) => {this.chats = response, console.log(response)});
   }
 
+  createChats = () =>
+  this.apiService.createFeeds(this.title, this.imageUrl).subscribe((response) => { console.log("Fatto") });
 }
+
